@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+
+        getCelcius() {
+            return this.celcius;
+        }
+
+        setCelcius(value) {
+            this.celcius = value;
+        }
+
+        convertToF() {
+            return 9/5 * this.celcius + 32;
+        }
+
+        convertToK() {
+            return this.celcius + 273.15;
+        }
+    }
+
+    let temper1 = new Temperature(25);
+    document.write("Chuyen sang do F = " + temper1.convertToF()
+    + "<br>" + "Chuyen sang do K = " + temper1.convertToK());
+</script>
+</body>
+</html>
