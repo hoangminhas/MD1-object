@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Meo {
+        constructor(ten, cannang) {
+            this._ten = ten;
+            this._cannang = cannang;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get cannang() {
+            return this._cannang;
+        }
+
+        set cannang(value) {
+            this._cannang = value;
+        }
+
+        can(chuot){
+            this._cannang += 1;
+            chuot.cannang = chuot.cannang - 1;
+        }
+    }
+
+    class Chuot {
+        constructor(ten, cannang) {
+            this._ten = ten;
+            this._cannang = cannang;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get cannang() {
+            return this._cannang;
+        }
+
+        set cannang(value) {
+            this._cannang = value;
+        }
+    }
+
+    let Tom = new Meo('Tom', 10);
+
+
+
+
+</script>
+</body>
+</html>

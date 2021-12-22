@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop Hinh Tron</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+
+        getRadius(){
+            return this.radius;
+        }
+        setRadius(radius){
+            this.radius = radius;
+        }
+
+        getArea(){
+            return this.radius*this.radius*Math.PI;
+        }
+        getColor(){
+            return this.color;
+        }
+    }
+
+    let belehit = new Circle(5, 'deepRed');
+    alert(belehit.getArea())
+</script>
+</body>
+</html>
