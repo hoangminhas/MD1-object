@@ -48,16 +48,28 @@
         }
 
         drawCanvas(x, y){
-            let rect = document.getElementById('myCanvas');
+            let rect = document.getElementById("myCanvas");
             let ctx = rect.getContext('2d');
+            let color = this.randomlyColor();
+            ctx.beginPath()
             ctx.rect(x, y, this._width, this._height);
-            ctx.fillStyle = 'orange';
+            ctx.fillStyle = color;
             ctx.fill();
+            ctx.closePath();
+        }
+
+        randomlyColor(){
+            let red = this.getRandomHex();
+            let green = this.getRandomHex();
+            let blue = this.getRandomHex();
+            return "rgb("+red+", "+green+", "+blue+")";
+        }
+
+        getRandomHex(){
+            return Math.floor(Math.random()*225);
         }
 
     }
-
-
 
     function cljck(){
         let widthz = document.getElementById('width').value;
@@ -66,17 +78,11 @@
         parseFloat(heightz);
         let testHCN = new Rectangle(widthz, heightz);
         alert("Ve thanh cong");
-        testHCN.drawCanvas(10, 20);
+        testHCN.drawCanvas(10, 10);
         document.getElementById('result').innerHTML = "Chu vi: " + testHCN.printCircumference()
         + "<br>" + "Dien tich: " + testHCN.printArea();
     }
 
-
-
-
-    // let myLand = new Rectangle(cd, cr);
-    // document.write("Dien tich: " + myLand.printArea()
-    //     + "<br>" + "Chu vi: " + myLand.printCircumference());
 </script>
 </body>
 </html>
