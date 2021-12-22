@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve canvas</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="200"></canvas>
+
+<script>
+  let c = document.getElementById('myCanvas');
+  let ctx = c.getContext('2d');
+
+  //Ve duong thang:
+  // ctx.moveTo(0,0);
+  // ctx.lineTo(200, 100);
+  // ctx.stroke();
+
+  //Ve duong tron:
+  // ctx.beginPath();
+  // ctx.arc(95,50,50,0,1.2*Math.PI);
+  // ctx.stroke();
+
+  //Ve Text:
+  // ctx.font = '30px monospace';
+  // ctx.fillText("With The Beatles", 50, 100);
+
+  //Ve hieu ung gradient:
+  let grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, 'red');
+  grd.addColorStop(1, 'white');
+
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+</script>
+</body>
+</html>
