@@ -47,9 +47,10 @@
 
         }
 
-        drawCanvas(x, y){
-            let rect = document.getElementById("myCanvas");
+        drawCanvas(x, y, idCanvas){
+            let rect = document.getElementById(idCanvas);
             let ctx = rect.getContext('2d');
+            ctx.clearRect(this.x, this.y, this._width, this._height);
             let color = this.randomlyColor();
             ctx.beginPath()
             ctx.rect(x, y, this._width, this._height);
@@ -78,7 +79,7 @@
         parseFloat(heightz);
         let testHCN = new Rectangle(widthz, heightz);
         alert("Ve thanh cong");
-        testHCN.drawCanvas(10, 10);
+        testHCN.drawCanvas(10, 10, 'myCanvas');
         document.getElementById('result').innerHTML = "Chu vi: " + testHCN.printCircumference()
         + "<br>" + "Dien tich: " + testHCN.printArea();
     }

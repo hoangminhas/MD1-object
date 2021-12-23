@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REmote</title>
+</head>
+<body>
+<script>
+  class TV {
+    status;
+    channel;
+    volume;
+
+    constructor(status, channel, volume) {
+      this.status = status;
+      this.channel = channel;
+      this.volume = volume;
+    }
+
+
+    getStatus() {
+      return this.status;
+    }
+
+    setStatus(status) {
+      this.status = status;
+    }
+
+    getChannel() {
+      return this.channel;
+    }
+
+    setChannel(channel) {
+      this.channel = channel;
+    }
+
+    getVolume() {
+      return this.volume;
+    }
+
+    setVolume(volume) {
+      this.volume = volume;
+    }
+  }
+
+  class Remote {
+    onOff(tv){
+      tv.setStatus(!tv.getStatus());
+    }
+
+    changeChannel(tv, channel){
+      if (tv.getStatus()){
+        tv.setChannel(channel);
+      }
+    }
+
+    upVolume(tv){
+      if (tv.getStatus()){
+        if (tv.getVolume() < 3){
+          tv.setVolume(tv.getVolume()+1);
+        }
+      }
+    }
+  }
+
+  let tv1 = new TV(false,null ,1);
+  let remote = new Remote();
+
+
+</script>
+</body>
+</html>

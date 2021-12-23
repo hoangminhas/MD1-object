@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 11h30 trua</title>
+</head>
+<body>
+<script>
+    class Student {
+        name;
+        group;
+        ScoreKy1;
+        ScoreKy2;
+
+        constructor(name, group, ScoreKy1, ScoreKy2) {
+            this.name = name;
+            this.group = group;
+            this._ScoreKy1 = ScoreKy1;
+            this._ScoreKy2 = ScoreKy2;
+        }
+
+        get ScoreKy1() {
+            return this._ScoreKy1;
+        }
+
+        get ScoreKy2() {
+            return this._ScoreKy2;
+        }
+
+        set ScoreKy1(value) {
+            this._ScoreKy1 = value;
+        }
+
+        set ScoreKy2(value) {
+            this._ScoreKy2 = value;
+        }
+
+        xeploai(){
+            const DTK = (this._ScoreKy1 + this._ScoreKy2) / 2;
+            if (DTK<=6) {
+                return "Loai trung binh";
+            } else if (DTK<=8) {
+                return "Loai kha";
+            } else {
+                return "Loai gioi";
+            }
+        }
+
+        getInfor(){
+            return "Hello motherfucker, I am " + this.name + " from " + this.group + ". Stay yella my fellas";
+        }
+    }
+
+    let student1 = new Student('Hoang Steve Minh', '12A2', 3, 5);
+    let student2 = new Student('John Lennon', 'The Beatles', 8, 4);
+    let student3 = new Student('Roger Waters', 'Pink Floyd', 9, 9);
+
+
+</script>
+</body>
+</html>

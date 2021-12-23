@@ -6,58 +6,85 @@
 </head>
 <body>
 <script>
-    class Meo {
-        constructor(ten, cannang) {
-            this._ten = ten;
-            this._cannang = cannang;
+
+    class Animal {
+        constructor(name, weight, speed) {
+            this._name = name;
+            this._weight = weight;
+            this._speed = speed;
         }
 
-        get ten() {
-            return this._ten;
+
+        get name() {
+            return this._name;
         }
 
-        set ten(value) {
-            this._ten = value;
+        set name(value) {
+            this._name = value;
         }
 
-        get cannang() {
-            return this._cannang;
+        get weight() {
+            return this._weight;
         }
 
-        set cannang(value) {
-            this._cannang = value;
+        set weight(value) {
+            this._weight = value;
         }
 
-        can(chuot){
-            this._cannang += 1;
-            chuot.cannang = chuot.cannang - 1;
-        }
-    }
-
-    class Chuot {
-        constructor(ten, cannang) {
-            this._ten = ten;
-            this._cannang = cannang;
+        get speed() {
+            return this._speed;
         }
 
-        get ten() {
-            return this._ten;
-        }
-
-        set ten(value) {
-            this._ten = value;
-        }
-
-        get cannang() {
-            return this._cannang;
-        }
-
-        set cannang(value) {
-            this._cannang = value;
+        set speed(value) {
+            this._speed = value;
         }
     }
 
-    let Tom = new Meo('Tom', 10);
+    class Meo extends Animal{
+       constructor(name, weight, speed) {
+           super(name, weight, speed);
+       }
+
+       say(){
+           return "Meow meow";
+       }
+
+       catch(rat){
+           if (this._speed > rat.speed) {
+               this.eat(rat);
+           }
+       }
+
+       eat(rat){
+           this.weight += 1;
+           rat.weight--;
+       }
+    }
+
+    class Chuot extends Animal{
+       constructor(name, weight, speed, isLive) {
+           super(name, weight, speed);
+           this._isLive = isLive;
+       }
+
+       get isLive() {
+            return this._isLive;
+        }
+
+       set isLive(value) {
+            this._isLive = value;
+       }
+
+       say(){
+           return "hello";
+       }
+
+    }
+
+    let Tom = new Meo("Tom", 10, 7);
+    let Jerry = new Chuot('Jerry', 7, 5, true);
+
+    console.log(Tom.weight);
 
 
 
