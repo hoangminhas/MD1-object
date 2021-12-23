@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Stimulize lamp working</title>
 </head>
 <body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this._energy = energy;
+        }
 
+        get energy() {
+            return this._energy;
+        }
+
+        set energy(value) {
+            this._energy = value;
+        }
+
+        decreaseEnergy(){
+            if (this._energy>0){
+                this._energy--;
+            }
+        }
+    }
+
+    class FlashLamp {
+        constructor(battery) {
+            this._status = false;
+            this._battery = battery;
+        }
+
+        get batteryInfo() {
+            return this._battery;
+        }
+
+        set battery(value) {
+            this._battery = value;
+        }
+
+        turnOn(){
+            this._status = true;
+        }
+
+        turnOff(){
+            this._status = false;
+        }
+
+        light(){
+            if(this._status) {
+                return "Lightning";
+            } else {
+                return "No lightning";
+            }
+        }
+    }
+
+</script>
 </body>
 </html>
